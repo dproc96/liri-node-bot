@@ -1,0 +1,19 @@
+{
+  "name": "liri-node-bot",
+  "version": "1.0.0",
+  "description": "A program for finding music and movies from the terminal",
+  "main": "liri.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dproc96/liri-node-bot.git"
+  },
+  "author": "Dan Proctor",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dproc96/liri-node-bot/issues"
+  },
+  "homepage": "https://github.com/dproc96/liri-node-bot#readme"
+}
