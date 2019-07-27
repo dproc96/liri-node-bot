@@ -41,9 +41,6 @@ function concertThis() {
                 console.log(moment(concert.datetime).format("dddd, MMMM Do YYYY, h:mm a"));
                 console.log("====================================================");
             })
-            // for (let concert of response.data) {
-
-            // }
         })
         .catch(function(error){
             console.log(error);
