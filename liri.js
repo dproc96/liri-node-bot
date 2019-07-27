@@ -29,6 +29,12 @@ function execute() {
     }
 }
 
+function logResult(result) {
+    fs.appendFile("log.txt", result, function(error) {
+        console.log(error);
+    })
+}
+
 function concertThis() {
     axios
         .get("https://rest.bandsintown.com/artists/" + input + "/events?app_id=codingbootcamp")
@@ -40,6 +46,7 @@ function concertThis() {
                 console.log(`${concert.venue.city}, ${concert.venue.country}`);
                 console.log(moment(concert.datetime).format("dddd, MMMM Do YYYY, h:mm a"));
                 console.log("====================================================");
+                logResult(JSON.stringify(concert, null, 2));
             })
         })
         .catch(function(error){
@@ -60,6 +67,7 @@ function spotifyThis() {
             console.log(moment(track.release_date).format("YYYY"));
             console.log(`Link: ${track.external_urls.spotify}`)
             console.log("====================================================");
+            logResult(JSON.stringify(track, null, 2));
         })
     })
 }
@@ -81,6 +89,7 @@ function movieThis() {
             console.log("----------------------------------------------------");
             console.log(response.data.Actors);
             console.log("====================================================");
+            logResult(JSON.stringify(response, null, 2));
         })
         .catch(function(error) {
             console.log(error);
